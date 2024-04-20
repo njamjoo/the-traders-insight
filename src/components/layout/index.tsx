@@ -1,6 +1,6 @@
 import { ThemedLayoutV2, ThemedTitleV2 } from "@refinedev/antd"
 import Header from "./header"
-import myLogo from "D:/The Traders Insight/the-traders-insight/public/Picture1.jpg"
+import myLogo from "./favicon.ico"
 
 const MySmallIcon = () => (
   <img src={myLogo} alt="My Logo" style={{ width: 24, height: 24 }} />
