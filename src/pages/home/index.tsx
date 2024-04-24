@@ -5,16 +5,13 @@ export const Home = () => {
     return (
         <div>
             <Row gutter={[32, 32]}>
-                <Col xs={24} sm={24} xl={6}>
+                <Col xs={24} sm={24} xl={8}>
                     <AverageReturn />
                 </Col>
-                <Col xs={24} sm={24} xl={6}>
-                    <WinRate />
-                </Col>
-                <Col xs={24} sm={24} xl={6}>
+                <Col xs={24} sm={24} xl={8}>
                     <DaysOfWeek />
                 </Col>
-                <Col xs={24} sm={24} xl={6}>
+                <Col xs={24} sm={24} xl={8}>
                     <SidePnl />
                 </Col>
             </Row>

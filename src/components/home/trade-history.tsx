@@ -58,7 +58,15 @@ const TradeHistory = () => {
             title: <Text size='xs'>LOTS</Text>,
             dataIndex: "Lots",
             key: "Lots",
-            width: "auto",            
+            width: "auto",     
+            render: (text: any) => {
+                const lots = Number(text);
+                const formattedlots = lots.toFixed(2);    
+                
+                return (
+                    formattedlots
+                )
+            }
         },
         {
             title: <Text size='xs'>OPEN TIME</Text>,
@@ -159,14 +167,14 @@ const TradeHistory = () => {
             dataIndex: "Commission",
             key: "Commission",
             width: "auto",
-            // render: (text: any) => {
-            //     const formattedCommission = text.toFixed(1)
-
-            //     return (
-            //         <Text>{formattedCommission}</Text>
-            //     )
-            // }            
-            // align: "center",
+            render: (text: any) => {
+                const fee = Number(text);
+                const formattedfee = fee.toFixed(1);    
+                
+                return (
+                    formattedfee
+                )
+            }
         },
         // {
         //     title: <Text size='xs'>BALANCE [$]</Text>,

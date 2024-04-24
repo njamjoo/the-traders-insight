@@ -17,9 +17,9 @@ const AverageReturn = () => {
     })
 
     const config: AreaConfig = {
-        data: data2024,
+        data: jsonData,
         xField: "Close_Time",
-        yField: "Profit",
+        yField: "50000",
         appendPadding: [1, 0, 0, 0],
         padding: 0,
         syncViewPadding: true,
@@ -38,6 +38,7 @@ const AverageReturn = () => {
         xAxis: false,
         yAxis: {
             tickCount: 20,
+            min: 40000,
             label: {
                 style:{
                     stroke: 'transparent',
@@ -55,11 +56,10 @@ const AverageReturn = () => {
         line: {
             color: "#135200",
         },
-        areaStyle: () => {
-            return {
-                fill: ""
-            }
+        areaStyle: {
+                fill: "#135200"            
         }
+        
     }
 
     return (
@@ -114,7 +114,7 @@ const AverageReturn = () => {
                         `$${avgProfit.toFixed(1)}`
                     )}
                 </Text>
-                <Area {...config} style={{ width: '65%'}}/>
+                <Area {...config} style={{ width: '65%' }}/>
             </div>
         </Card>
     )
