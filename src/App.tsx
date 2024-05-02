@@ -14,7 +14,6 @@ import routerBindings, {
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import { App as AntdApp } from "antd";
-import { createClient } from "graphql-ws";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
@@ -41,7 +40,15 @@ function App() {
                   liveMode: "auto",
                 }}
               >
-                <Routes>
+                <Layout>
+                  {/* Render the Home component inside the Layout */}
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    {/* You can add more routes here if needed */}
+                    <Route path="*" element={<Home />} />
+                  </Routes>
+                </Layout>
+                {/* <Routes>
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -59,7 +66,7 @@ function App() {
                     }>
                       <Route index element={<Home />} />                      
                   </Route>
-                </Routes>
+                </Routes> */}
                 <RefineKbar />
                 <UnsavedChangesNotifier />
                 <DocumentTitleHandler />

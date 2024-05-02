@@ -3,7 +3,7 @@ import { Card, Col, Row, Skeleton } from 'antd'
 import { useState } from 'react'
 import { Text } from '../text'
 import jsonData from './tradeHistory.json'
-import { Area, AreaConfig, Pie, PieConfig } from '@ant-design/plots'
+import { Area, AreaConfig, Pie, PieConfig, Progress } from '@ant-design/plots'
 
 const WinRate = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -18,15 +18,14 @@ const WinRate = () => {
     // Step 3: Calculate the win rate
     const winRate = (winningTrades / totalTrades) * 100; // Convert to percentage
 
-    const config: PieConfig = {
+    const config = {
         data: [
             {type: "Wins", value: winningTrades},
             {type: "Losses", value: losingTrades}
         ],
+        percent: 0.571,
         angleField: 'value',
         colorField: 'type',
-        legend: false,
-        label: false,
         autoFit: true,
         appendPadding: [1, 0, 0, 0],
         padding: 0,
@@ -86,7 +85,7 @@ const WinRate = () => {
                                 `${winRate.toFixed(1)}%`
                             )}
                         </Text>
-                        <Pie {...config} style={{width:'10%'}} ></Pie>
+                        <Progress {...config} style={{width:'65%'}} ></Progress>
                     </div>     
         </Card>
     )

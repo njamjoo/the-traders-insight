@@ -20,7 +20,7 @@ const RunningBalance = () => {
     color: "green", 
     yAxis: {
       tickCount: 4,
-      min: 35000,
+      min: 40000,
       nice: true,
       label: {
         formatter: (v: string) => {

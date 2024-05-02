@@ -224,7 +224,7 @@ const TradeHistory = () => {
                     <Table 
                         dataSource={jsonData}
                         columns={columns} 
-                        scroll={{x: "800px", y: "768px"}} //Change y later on based on how components will look like
+                        scroll={{x: "800px", y: "758px"}} //Change y later on based on how components will look like
                         size='small'
                         pagination={{ defaultPageSize: 20}}
                         // tableLayout='auto'                       
